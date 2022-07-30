@@ -25,10 +25,10 @@ const player = (who) => ({
 await Promise.all([
   ctcAlice.p.Alice({
     // implement Alice's interact object here
-    ...player('Alice');
+    ...player('Alice'),
   }),
   ctcBob.p.Bob({
     // implement Bob;s interact object here
-    ...player('Bob');
+    ...player('Bob'),
   }),
 ])
