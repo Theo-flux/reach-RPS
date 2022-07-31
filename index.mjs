@@ -10,8 +10,8 @@ const ctcAlice = accAlice.contract(backend);
 const ctcBob = accBob.contract(backend, ctcAlice.getInfo());
 
 const HAND = ['Rock', 'Paper', 'Scissors'];
-const OUTCOME =['Bob wins', 'Draw', 'Alice wins'];
-const player = (who) => ({
+const OUTCOME = ['Bob wins', 'Draw', 'Alice wins'];
+const Player = (who) => ({
   getHand: () => {
     const hand = Math.floor(Math.random() * 3);
     console.log(`${who} played ${HAND[hand]}`);
@@ -25,10 +25,10 @@ const player = (who) => ({
 await Promise.all([
   ctcAlice.p.Alice({
     // implement Alice's interact object here
-    ...player('Alice'),
+    ...Player('Alice'),
   }),
   ctcBob.p.Bob({
     // implement Bob;s interact object here
-    ...player('Bob'),
+    ...Player('Bob'),
   }),
 ])
